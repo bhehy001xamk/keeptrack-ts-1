@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.0 on darwin)" generated="20221207 18:30:37.394" rpa="false" schemaversion="3">
+<suite id="s1" name="System-Testing" source="/Users/heidihyvarinen/Documents/Koulu/Ohjelmistotestaus/Harjoitustyö/keeptrack-ts/src/system-testing.robot">
+<test id="s1-t1" name="Testataan että sovellus käynnistyy" line="6">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000/</arg>
+<arg>Safari</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221207 18:30:37.589" level="INFO">Opening browser 'Safari' to base url 'http://localhost:3000/'.</msg>
+<status status="PASS" starttime="20221207 18:30:37.588" endtime="20221207 18:30:38.876"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221207 18:30:38.879" endtime="20221207 18:30:38.896"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Home</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20221207 18:30:38.896" endtime="20221207 18:30:38.923"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221207 18:30:41.926" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221207 18:30:38.924" endtime="20221207 18:30:41.927"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20221207 18:30:41.928" endtime="20221207 18:30:42.158"/>
+</kw>
+<status status="PASS" starttime="20221207 18:30:37.586" endtime="20221207 18:30:42.159"/>
+</test>
+<test id="s1-t2" name="Testataan että Home painike toimii ja sivusto renderöityy" line="17">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000/Projects</arg>
+<arg>Safari</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221207 18:30:42.168" level="INFO">Opening browser 'Safari' to base url 'http://localhost:3000/Projects'.</msg>
+<status status="PASS" starttime="20221207 18:30:42.165" endtime="20221207 18:30:43.363"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221207 18:30:43.364" endtime="20221207 18:30:43.381"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:root</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221207 18:30:43.382" endtime="20221207 18:30:43.429"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Home</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221207 18:30:43.430" level="INFO">Clicking link 'Home'.</msg>
+<status status="PASS" starttime="20221207 18:30:43.429" endtime="20221207 18:30:43.603"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Home</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20221207 18:30:43.603" endtime="20221207 18:30:43.609"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221207 18:30:46.611" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221207 18:30:43.610" endtime="20221207 18:30:46.613"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20221207 18:30:46.617" endtime="20221207 18:30:46.693"/>
+</kw>
+<status status="PASS" starttime="20221207 18:30:42.161" endtime="20221207 18:30:46.694"/>
+</test>
+<test id="s1-t3" name="Testataan että sovelluksen Projects sivu toimii" line="32">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>Safari</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221207 18:30:46.708" level="INFO">Opening browser 'Safari' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20221207 18:30:46.704" endtime="20221207 18:30:47.933"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221207 18:30:47.936" endtime="20221207 18:30:47.953"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:root</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221207 18:30:47.954" endtime="20221207 18:30:47.985"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Projects</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221207 18:30:47.986" level="INFO">Clicking link 'Projects'.</msg>
+<status status="PASS" starttime="20221207 18:30:47.985" endtime="20221207 18:30:48.023"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Projects</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20221207 18:30:48.025" endtime="20221207 18:30:48.125"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221207 18:30:51.130" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221207 18:30:48.127" endtime="20221207 18:30:51.132"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20221207 18:30:51.136" endtime="20221207 18:30:51.206"/>
+</kw>
+<status status="PASS" starttime="20221207 18:30:46.697" endtime="20221207 18:30:51.207"/>
+</test>
+<doc>application-testing</doc>
+<status status="PASS" starttime="20221207 18:30:37.398" endtime="20221207 18:30:51.210"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="System-Testing">System-Testing</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

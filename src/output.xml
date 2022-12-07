@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.0 on darwin)" generated="20221207 16:36:39.271" rpa="false" schemaversion="3">
+<suite id="s1" name="System-Testing" source="/Users/heidihyvarinen/Documents/Koulu/Ohjelmistotestaus/Harjoitustyö/keeptrack-ts/src/system-testing.robot">
+<test id="s1-t1" name="Testataan että sovellus toimii" line="6">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>Safari</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221207 16:36:39.342" level="INFO">Opening browser 'Safari' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20221207 16:36:39.341" endtime="20221207 16:36:40.559"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221207 16:36:40.560" endtime="20221207 16:36:40.574"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:root</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221207 16:36:40.574" endtime="20221207 16:36:40.602"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Projects</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221207 16:36:40.603" level="INFO">Clicking link 'Projects'.</msg>
+<status status="PASS" starttime="20221207 16:36:40.603" endtime="20221207 16:36:40.632"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Projects</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20221207 16:36:40.632" endtime="20221207 16:36:40.645"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221207 16:36:43.647" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221207 16:36:40.645" endtime="20221207 16:36:43.648"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20221207 16:36:43.649" endtime="20221207 16:36:43.878"/>
+</kw>
+<status status="PASS" starttime="20221207 16:36:39.341" endtime="20221207 16:36:43.879"/>
+</test>
+<test id="s1-t2" name="Testataan että lomake toimii" line="21">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>Safari</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221207 16:36:43.881" level="INFO">Opening browser 'Safari' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20221207 16:36:43.880" endtime="20221207 16:36:45.087"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221207 16:36:45.088" endtime="20221207 16:36:45.104"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Projects</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221207 16:36:45.104" level="INFO">Clicking button 'Projects'.</msg>
+<msg timestamp="20221207 16:36:45.194" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221207 16:36:45.194" level="FAIL">Button with locator 'Projects' not found.</msg>
+<status status="FAIL" starttime="20221207 16:36:45.104" endtime="20221207 16:36:45.197"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>name:"edit Abshire and Sons"</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221207 16:36:45.198" endtime="20221207 16:36:45.198"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20221207 16:36:45.198" endtime="20221207 16:36:45.198"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20221207 16:36:45.198" endtime="20221207 16:36:45.419"/>
+</kw>
+<status status="FAIL" starttime="20221207 16:36:43.879" endtime="20221207 16:36:45.419">Button with locator 'Projects' not found.</status>
+</test>
+<test id="s1-t3" name="Testataan että Home painike toimii ja sivusto renderöityy" line="34">
+<status status="FAIL" starttime="20221207 16:36:45.420" endtime="20221207 16:36:45.420">Test contains no keywords.</status>
+</test>
+<test id="s1-t4" name="Testataan että Home painike toimii ja sivusto renderöityy" line="37">
+<status status="FAIL" starttime="20221207 16:36:45.421" endtime="20221207 16:36:45.421">Test contains no keywords.</status>
+</test>
+<test id="s1-t5" name="Testataan että More painike lataa lisää kortteja" line="40">
+<status status="FAIL" starttime="20221207 16:36:45.421" endtime="20221207 16:36:45.422">Test contains no keywords.</status>
+</test>
+<doc>application-testing</doc>
+<status status="FAIL" starttime="20221207 16:36:39.271" endtime="20221207 16:36:45.422"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="4" skip="0" id="s1" name="System-Testing">System-Testing</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221207 16:36:45.421" level="WARN">Multiple tests with name 'Testataan että Home painike toimii ja sivusto renderöityy' executed in suite 'System-Testing'.</msg>
+</errors>
+</robot>

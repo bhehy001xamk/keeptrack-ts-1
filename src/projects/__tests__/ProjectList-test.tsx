@@ -19,12 +19,12 @@ describe('<ProjectList />', () => {
 
   beforeEach(() => {});
 
-  test('should render without crashing', () => {
+  test('pitäisi renderöidä ilman kaatumista', () => {
     setup();
     expect(screen).toBeDefined();
   });
 
-  test('should display list', () => {
+  test('pitäisi näyttää lista', () => {
     setup();
     expect(screen.getAllByRole('heading')).toHaveLength(MOCK_PROJECTS.length);
     expect(screen.getAllByRole('img')).toHaveLength(MOCK_PROJECTS.length);
@@ -32,9 +32,8 @@ describe('<ProjectList />', () => {
     expect(screen.getAllByRole('button')).toHaveLength(MOCK_PROJECTS.length);
   });
 
-  test('should display form when edit clicked', async () => {
+  test('pitäisi näyttää lomake kun edit painiketta on klikattu', async () => {
     setup();
-    // eslint-disable-next-line testing-library/render-result-naming-convention
     const user = userEvent.setup();
     await user.click(
       screen.getByRole('button', { name: /edit Wisozk Group/i })
@@ -46,9 +45,8 @@ describe('<ProjectList />', () => {
     ).toBeInTheDocument();
   });
 
-  test('should display image and remove form when cancel clicked', async () => {
+  test('pitäisi näyttää kuva ja sulkea lomake kun cancel painiketta painetaan', async () => {
     setup();
-    // eslint-disable-next-line testing-library/render-result-naming-convention
     const user = userEvent.setup();
     await user.click(
       screen.getByRole('button', { name: /edit Wisozk Group/i })

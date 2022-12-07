@@ -2,7 +2,7 @@ import { MOCK_PROJECTS } from '../MockProjects';
 import { projectAPI } from '../projectAPI';
 
 describe('projectAPI', () => {
-  test('should return records', () => {
+  test('pitäisi palauttaa tulos', () => {
     const response = new Response(undefined, {
       status: 200,
       statusText: 'OK',

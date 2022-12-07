@@ -20,8 +20,8 @@ describe('<ProjectCard />', () => {
   beforeEach(() => {
     project = new Project({
       id: 1,
-      name: 'Mission Impossible',
-      description: 'This is really difficult',
+      name: 'Mahdoton tehtava',
+      description: 'Tama on vaikeaa',
       budget: 100,
     });
     handleEdit = jest.fn();
@@ -34,16 +34,12 @@ describe('<ProjectCard />', () => {
   it('renders project properly', () => {
     setup();
     expect(screen.getByRole('heading')).toHaveTextContent(project.name);
-    // screen.debug(document);
-    screen.getByText(/this is really difficult\.\.\./i);
+    screen.getByText(/mahdoton tehtava\.\.\./i);
     screen.getByText(/budget : 100/i);
   });
 
   it('handler called when edit clicked', async () => {
     setup();
-    // this query works screen.getByText(/edit/i)
-    // but using role is better
-    // eslint-disable-next-line testing-library/render-result-naming-convention
     const user = userEvent.setup();
     await user.click(screen.getByRole('button', { name: /edit/i }));
     expect(handleEdit).toBeCalledTimes(1);

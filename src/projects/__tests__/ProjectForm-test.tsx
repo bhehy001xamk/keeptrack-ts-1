@@ -38,8 +38,8 @@ describe('<ProjectForm />', () => {
   beforeEach(() => {
     project = new Project({
       id: 1,
-      name: 'Mission Impossible',
-      description: 'This is really difficult',
+      name: 'Mahdoton tehtava',
+      description: 'Tama on vaikeaa',
       budget: 100,
     });
     updatedProject = new Project({
@@ -50,7 +50,7 @@ describe('<ProjectForm />', () => {
     handleCancel = jest.fn();
   });
 
-  test('should load project into form', () => {
+  test('pitäisi avata projektin muokattava lomake muoto', () => {
     setup();
     expect(
       screen.getByRole('form', {
@@ -64,7 +64,7 @@ describe('<ProjectForm />', () => {
     });
   });
 
-  test('should accept input', async () => {
+  test('pitäisi hyväksyä tietojen syöttö', async () => {
     setup();
     const user = userEvent.setup();
     await user.clear(nameTextBox);
@@ -80,14 +80,14 @@ describe('<ProjectForm />', () => {
     expect(budgetTextBox).toHaveValue(updatedProject.budget);
   });
 
-  test('name should display required validation', async () => {
+  test('nimen tulee näyttää vaatimukset', async () => {
     setup();
     const user = userEvent.setup();
     await user.clear(nameTextBox);
     expect(screen.getByRole('alert')).toBeInTheDocument();
   });
 
-  test('name should display minlength validation', async () => {
+  test('nimen tulee näyttää vähimmäispituuden vaatimus', async () => {
     setup();
     const user = userEvent.setup();
     await user.clear(nameTextBox);
@@ -97,7 +97,7 @@ describe('<ProjectForm />', () => {
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
   });
 
-  test('budget should display not 0 validation', async () => {
+  test('budjetti ei saisi hyväksyä 0', async () => {
     setup();
     const user = userEvent.setup();
     await user.clear(budgetTextBox);

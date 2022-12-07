@@ -37,39 +37,31 @@ describe('<ProjectsPage />', () => {
   afterEach(() => server.resetHandlers());
   afterAll(() => server.close());
 
-  test('should render without crashing', () => {
+  test('pitäisi renderöityä ilman kaatumista', () => {
     renderComponent();
     expect(screen).toBeDefined();
   });
 
-  test('should display loading', () => {
+  test('pitäisi näyttää että lataa', () => {
     renderComponent();
     expect(screen.getByText(/loading/i)).toBeInTheDocument();
   });
 
-  test('should display projects', async () => {
+  test('pitäisi näyttää projektit', async () => {
     renderComponent();
     expect(await screen.findAllByRole('img')).toHaveLength(
       MOCK_PROJECTS.length
     );
   });
 
-  test('should display more button', async () => {
+  test('pitäisi näyttää more painike', async () => {
     renderComponent();
     expect(
       await screen.findByRole('button', { name: /more/i })
     ).toBeInTheDocument();
   });
 
-  // this tests the same as the last test but demonstrates
-  // what find* methods are doing
-  test('should display more button with get', async () => {
-    renderComponent();
-    await waitForElementToBeRemoved(() => screen.queryByText(/loading/i));
-    expect(screen.getByRole('button', { name: /more/i })).toBeInTheDocument();
-  });
-
-  test('should display custom error on server error', async () => {
+  test('pitäisi näyttää erroria server error tilanteessa', async () => {
     server.use(
       rest.get(projectsUrl, (req, res, ctx) => {
         return res(ctx.status(500, 'Server error'));

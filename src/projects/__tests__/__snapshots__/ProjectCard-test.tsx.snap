@@ -5,7 +5,7 @@ exports[`<ProjectCard /> snapshot 1`] = `
   className="card"
 >
   <img
-    alt="Mission Impossible"
+    alt="Mahdoton tehtava"
     src=""
   />
   <section
@@ -19,11 +19,11 @@ exports[`<ProjectCard /> snapshot 1`] = `
         className="strong"
       >
         <strong>
-          Mission Impossible
+          Mahdoton tehtava
         </strong>
       </h5>
       <p>
-        This is really difficult...
+        Tama on vaikeaa...
       </p>
       <p>
         Budget : 
@@ -31,7 +31,7 @@ exports[`<ProjectCard /> snapshot 1`] = `
       </p>
     </a>
     <button
-      aria-label="edit Mission Impossible"
+      aria-label="edit Mahdoton tehtava"
       className=" bordered"
       onClick={[Function]}
     >
